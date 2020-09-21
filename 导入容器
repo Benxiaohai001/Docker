@@ -1,0 +1,7 @@
+关于导入容器：
+  import fileid targetid
+在我们使用的时候总是会报错：
+  Error response from daemon: Error processing tar file(exit status 1): archive/tar: invalid tar header
+  这是win powershell的一个问题，我们换用cmd就不会出现这样的问题了；
+  原因分析：
+    powershell的一个问题，当你使用power导出镜像时，powershell是按照两个字节字符stdout；而cmd不是多字节字符stdout；docker支持单字节字符导入，所以会报上面的错误提示；
